@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <style>
+        /* Estilos CSS para o formulário e botão (você pode personalizar) */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilo para o botão de voltar */
+        .botao-voltar {
+            background-color: #3498db; /* Cor azul */
+            color: #fff; /* Cor do texto em branco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block; /* Transforma o link em bloco para alinhamento */
+            text-align: center; /* Centraliza o texto no botão */
+            margin-top: 247px; /* Movendo o botão para cima (ajuste este valor conforme necessário) */
+            margin-left: -100px; /* Movendo o botão para a esquerda */
+        }
+
+        .botao-voltar:hover {
+            background-color: #2980b9; /* Cor azul mais escura ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit" name="cadastrar">Cadastrar</button>
+    </form>
+
+    <!-- Botão de Voltar para a página inicial -->
+    <a href="Projetos pagina inicial.html" class="botao-voltar">Voltar</a>
+
+    <?php
+    if (isset($_POST['cadastrar'])) {
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $senha = $_POST["senha"];
+
+        $to = "lucasbalcevicz26@gmail.com"; // Substitua com o seu endereço de email
+        $subject = "Novo Cadastro";
+        $message = "Nome: " . $nome . "\n";
+        $message .= "Email: " . $email . "\n";
+        $message .= "Senha: " . $senha . "\n";
+
+        $headers = "From: " . $email . "\r\n";
+
+        // Envia o email
+        mail($to, $subject, $message, $headers);
+
+        // Redireciona para uma página de sucesso
+        header("Location: cadastro_sucesso.html");
+        exit;
+    }
+    ?>
+</body>
+</html>

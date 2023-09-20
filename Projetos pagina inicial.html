@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #813af3;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        /* Estilo inicialmente visível */
+        #proposito {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin: 20px;
+        }
+
+        /* Estilo para os links de cadastro e login */
+        .cadastro-login {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cadastro-login a {
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .cadastro-login a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilo para o botão ADMIN */
+        #botaoAdminContainer {
+            text-align: center;
+            margin: 20px; /* Espaçamento ao redor do botão */
+        }
+
+        #botaoAdmin {
+            text-decoration: none;
+            background-color: #f39c12;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #botaoAdmin:hover {
+            background-color: #d68910;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <!-- Logo (substitua 'URL_DA_SUA_IMAGEM' pelo URL da sua imagem online) -->
+        <img class="logo" src="C:\Users\lucas\OneDrive\Área de Trabalho\Projeto AH\LM Vendas digitais.png" alt="Logo da sua empresa" width="200" height="200">
+        <h1>Bem-vindo ao início do site de vendas</h1>
+    </header>
+    
+    <p>Aluno: Lucas Dircksen Balcevicz.</p>
+    <p>Professora: Marilene Gil</p>
+    
+    <!-- Div para centralizar o botão ADMIN -->
+    <div id="botaoAdminContainer">
+        <!-- Botão ADMIN -->
+        <button id="botaoAdmin" onclick="mostrarPrompt()">ADMIN</button>
+    </div>
+
+    <!-- Links de Cadastro e Login -->
+    <div class="cadastro-login">
+        <a href="cadastro.html">Cadastro</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    <script>
+        // Função para exibir um prompt para credenciais de ADMIN
+        function mostrarPrompt() {
+            var usuario = prompt("Digite o nome de usuário ADMIN:");
+            var senha = prompt("Digite a senha ADMIN:");
+
+            if (usuario === "Lucas" && senha === "Admin") {
+                // Credenciais corretas, redirecionar para a página de administração
+                window.location.href = "admin.html";
+            } else {
+                alert("Credenciais incorretas. Tente novamente.");
+            }
+        }
+    </script>
+</body>
+</html>
